@@ -9,11 +9,11 @@ function todos(state = [], action) {
   }
 }
 
-let store = createStore(todos, [ 'Use Redux' ])
+let store = createStore(todos, [ 'user' ]);
+module.exports = store;
+// store.dispatch({
+//   type: 'ADD_TODO',
+//   text: 'Read the docs'
+// })
 
-store.dispatch({
-  type: 'ADD_TODO',
-  text: 'Read the docs'
-})
-
-console.log(store.getState())
+// console.log(store.getState())

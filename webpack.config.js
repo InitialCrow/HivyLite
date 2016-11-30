@@ -3,7 +3,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 module.exports = {
  context: path.join(__dirname, 'app'),
- entry: ['./ressources/js/app.js'],
+ entry: ['./ressources/js/app.jsx'],
  output: {
   filename: 'app.js',
   path: path.join(__dirname, 'dist/ressources/js/'),
@@ -14,7 +14,7 @@ module.exports = {
 module: {
   loaders: [
   	{
-		  test: /\.js$/,
+		  test: /\.jsx?$/,
 		  exclude: /node_modules/,
 		  loader: 'babel-loader',
 		  query: {
@@ -23,7 +23,7 @@ module: {
  	 }
   ],
   resolve: {
-      extensions: ['', '.js']
+      extensions: ['', '.js','.jsx']
     }
  },
 
