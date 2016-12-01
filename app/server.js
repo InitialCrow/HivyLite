@@ -15,6 +15,10 @@ app.use(express.static(path.join(__dirname + '/')));
 app.get('/', function(req, res) {
   res.render('index.ejs');
 });
+app.get('/salut', function(req, res) {
+  console.log('salut')
+  res.end();
+});
 app.listen(8080, function () {
   console.log(' app listening on port 8080!');
 });

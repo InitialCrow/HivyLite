@@ -3,7 +3,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 module.exports = {
  context: path.join(__dirname, 'app'),
- entry: ['./ressources/js/app.jsx'],
+ entry: ['./ressources/js/index.jsx'],
  output: {
   filename: 'app.js',
   path: path.join(__dirname, 'dist/ressources/js/'),

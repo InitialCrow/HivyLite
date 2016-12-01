@@ -17,12 +17,11 @@
 	color: grey;
 	text-transform: uppercase;
 	font-weight: bold;
-	padding: 15px 0;
 
 }
-.form-container .form-input {
+.form-container .form-label .form-input {
 	display: block;
-	margin: 0 auto;
+	margin: 15px auto;
 	border: 2px solid lightgrey;
 	width: 95%;
 	border-radius: 4px;
