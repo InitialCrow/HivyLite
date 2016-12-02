@@ -5,3 +5,10 @@ export const takeProduct = (search) => {
 		payload: search
 	}
 }
+export const takeRequest = (search) => {
+	console.log('I searchs', search);
+	return {
+		type: "SELECTED_REQUEST",
+		payload: search
+	}
+}

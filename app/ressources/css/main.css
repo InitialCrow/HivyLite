@@ -67,6 +67,7 @@
 
 	
 }
+
 .form-container .cancel-button{
 
 	display: inline-block;
@@ -76,5 +77,11 @@
 	padding-top: 20px;
 	
 	vertical-align: middle;
+
+}
+.form-container .request-data{
+
+	display: inline-block;
+	
 
 }

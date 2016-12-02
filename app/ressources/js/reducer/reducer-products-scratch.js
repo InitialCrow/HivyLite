@@ -3,7 +3,7 @@ export default function(){
 	return [
 		{
 			id : 1,
-			name : 'plane tickets',
+			name : 'Plane tickets',
 			thumbnail : '',
 
 			field : [
@@ -18,9 +18,9 @@ export default function(){
 			name : 'Hivy T-shirt',
 			thumbnail :'',
 			field : [
-				React.createElement('label',{key:'ch_1',},React.createElement('input',{key:'ch_2', type:'checkbox', value:'F' }),'F'),
+				React.createElement('label',{key:'ch_1',},React.createElement('input',{key:'ch_2', type:'checkbox', value:'F' , name:'checkBoxSex'}),'F'),
 				
-				React.createElement('label',{key:'ch_3',},React.createElement('input',{key:'ch_4', type:'checkbox', value:'M'}),'M'),
+				React.createElement('label',{key:'ch_3',},React.createElement('input',{key:'ch_4', type:'checkbox', value:'M', name:'checkBoxSex'}),'M'),
 			]
 
 			
@@ -29,7 +29,7 @@ export default function(){
 			id : 3,
 			name : 'Madelaine',
 			thumbnail :'',
-			field : [React.createElement('p',{key:'cm_1'},'Do you want choclate ?'),React.createElement('input',{type:"checkbox", key:'cm_2',})]
+			form :[React.createElement('p',{key:'cm_1'},'Do you want choclate ?'),React.createElement('input',{type:"checkbox", key:'cm_2',})]
 			
 		}
 	]
