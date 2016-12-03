@@ -13,25 +13,36 @@ How To Install
 
 - After you need to install you local database you can use the sh script in `app/database/install.sh`use
 
-> cd app/database; sh install.sh\n
+> cd app/database; sh install.sh
+
 > -> Install database //script launching ...
+
 > -> choose your host .... // write your host
+
 > <- localhost //my host for this db is now localhost
+
 > -> choose Name For your DATABSE ... // write your db name
+
 > <- hivylite
+
 > -> install process .... 
+
 > its possible script ask your pass for root right just give it and install continue
+
 > -> do you want install hivyLite table ? (y/n) // write n case we have migration in node server
 
 - then go in `app/models/Db.js` and set db if you dont name your db 'hivylite'
 								
 
 
-    this.sequelize = new this.postgres('hivylite', 'postgres', 'postgres',{
-				host : 'localhost',
-				dialect:'postgres',
-				logging: false
-			});
+- this.sequelize = new this.postgres('hivylite', 'postgres', 'postgres',{
+
+	host : 'localhost',
+
+	dialect:'postgres',
+
+	logging: false
+ });
 
 - ok now db is ready go to install dependencies  do in HivyLite
 
