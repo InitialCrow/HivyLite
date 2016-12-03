@@ -30,6 +30,7 @@ class ProductList extends Component{
 		
 					requestList.push([React.createElement("li",{className: "request", key:request.id, onClick:()=>{this.props.takeRequest(request)}},request.name)])
 				}
+				
 			}
 			this.setState({requestsList:requestList})
 		});
@@ -59,11 +60,15 @@ class ProductList extends Component{
 					}
 			
 					list.push(React.createElement("li",{className: "product", key:product.id, onClick:()=>{this.props.takeProduct(product)}},product.name,React.createElement("img",{className: "product-img", key:product.id+1, src:product.thumbnail})))
-					
+						
 				}
+				
+				
+				
 				
 
 			}
+			
 			this.setState({productsList:list})
 		});
 		
@@ -71,10 +76,11 @@ class ProductList extends Component{
 	
 	render() {
 			if(this.state.requestsList.length >0){
+
 				return(
 
 					<div>
-						<input onChange={(evt)=>this.change(evt)} className="form-input" id="product-name" name="product_name" type="text" placeholder="products"
+						<input onChange={(evt)=>this.change(evt)} className="form-input" id="product-name" name="product_name" required="true" type="text" placeholder="products"
 						/>
 						<ul id="request-list">
 							
@@ -95,10 +101,11 @@ class ProductList extends Component{
 				)
 			}
 			else{
+
 				return(
 
 					<div>
-						<input onChange={(evt)=>this.change(evt)} className="form-input" id="product-name" name="product_name" type="text" placeholder="products"
+						<input onChange={(evt)=>this.change(evt)} className="form-input" id="product-name" name="product_name" required="true"  type="text" placeholder="products"
 						/>
 					
 						<br />

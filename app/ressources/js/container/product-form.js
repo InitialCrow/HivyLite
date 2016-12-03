@@ -4,28 +4,38 @@ import ReactDOM from "react-dom"
 import {connect} from 'react-redux'
 
 class ProductForm extends Component{
-	constructor(props) {
-	    super(props);
-	    this.state = {value: 3};
-	
- 	    this._onChangeStore = this._onChangeStore.bind(this);
+	constructor(props, context) {
+		super(props, context);
+		this.state={hidden : false}
+		this._onClick = this._onClick.bind(this);
 	}
-	_onChangeStore() {
-	  var newList = getListFromStore();  // your own function to get list from store
-	  this.setState({ options: newList});            // update state here
+	_onClick(evt){
+		this.setState({hidden : true})
 	}
-	render() {
-		return(
-			<div>
-				{this.props.product.form}
 
-				<input key='rdmy1' type='hidden' name="product_id" value={this.state.value}/>
+	render() {
+		
+			return(
+					<div >
+						{this.props.product.form}
+
+						
+					</div>
 				
-			</div>
 			
+				)
+		}
+	
+	
+		
+		
 			
-		)
-	}
+		
+	
+
+
+		
+	
 }
 function mapStateToProps(state){
 	return {

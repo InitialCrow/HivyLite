@@ -41,9 +41,10 @@ HomeController.prototype.getReducerRequest=function(req,res, dbManager){
 }
 HomeController.prototype.addRequest=function(req,res, dbManager){
 	let body = req.body;
-	let data = {}
+	let data = null
 	
-	if(body.productType === 'Plane tickets'){
+	if(body.productType === 'Plane tickets' && body.departure!=="" && body.return!==""){
+		data={}
 		data.name = body.product_name.replace(/(<([^>]+)>)/ig,"")
 		data.value =[
 			{
@@ -55,7 +56,8 @@ HomeController.prototype.addRequest=function(req,res, dbManager){
 		data.product_id = Number(body.product_id.replace(/(<([^>]+)>)/ig,""))
 
 	}
-	if(body.productType === 'Madelaine'){
+	if(body.productType === 'Madelaine' && body.nbMadelaine!==''){
+		data={}
 		data.name = body.product_name.replace(/(<([^>]+)>)/ig,"")
 		if(body.checkBoxChoco == 'true'){
 			data.value =[
@@ -79,19 +81,30 @@ HomeController.prototype.addRequest=function(req,res, dbManager){
 		data.product_id = Number(body.product_id.replace(/(<([^>]+)>)/ig,""))
 
 	}
-	if(body.productType === 'HivyTshirt'){
-
+	if(body.productType === 'HivyTshirt' && body.checkboxSex!=="" && body.color !=="" && body.checkboxSize!==""  ){
+		data={}
 		product_id : 1
 		data.name = body.product_name.replace(/(<([^>]+)>)/ig,"")
-		data.value = [
-		// describe will show label when you show a save request
-			{describe : ['Gender : ','Size : ', 'Color : '], value : [body.checkboxSex.replace(/(<([^>]+)>)/ig,""), body.checkboxSize.replace(/(<([^>]+)>)/ig,""), body.color.replace(/(<([^>]+)>)/ig,"")]}
-		]
+		if(body.checkboxSex !== undefined){
+			data.value = [
+			// describe will show label when you show a save request
+				{describe : ['Gender : ','Size : ', 'Color : '], value : [body.checkboxSex.replace(/(<([^>]+)>)/ig,""), body.checkboxSize.replace(/(<([^>]+)>)/ig,""), body.color.replace(/(<([^>]+)>)/ig,"")]}
+			]
+		}
+		
 		
 		data.product_id = Number(body.product_id.replace(/(<([^>]+)>)/ig,""))
 
 
 	}
+
+	if(data === null || data.name === '' || data.value===""|| data.product_id === ''){
+		res.redirect('/')
+		res.end()
+		return
+		
+	}
+
 	dbManager.tables.request.sync({force: false}).then(function () {
 		dbManager.tables.request.create({
 			name : data.name,

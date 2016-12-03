@@ -1,3 +1,15 @@
+li{
+	padding-top: 10px;
+	list-style: none;
+
+	clear:both;
+}
+.form-container .product-img{
+	float: left;
+	margin-right: 10px;
+	vertical-align: middle;
+
+}
 .form-container button:hover{
 	cursor: pointer;
 }

@@ -15,7 +15,7 @@ const App = () => (
 			<ProductForm />
 			
 			<section className="form-button-container">
-				<button type="" className="cancel-button">Cancel</button>
+				<a href="/" className="cancel-button">Cancel</a>
 				<button type="submit" className="clearfix form-button">Create a new request</button>
 			</section>
 		</form>
