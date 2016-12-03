@@ -31,11 +31,11 @@ How To Install
 
 > -> do you want install hivyLite table ? (y/n) // write n case we have migration in node server
 
-- then go in `app/models/Db.js` and set db if you dont name your db 'hivylite'
+- then go in `app/models/Db.js` and set db if you dont name your db 'hivylite' e;g newdb
 								
 
 
-- this.sequelize = new this.postgres('hivylite', 'postgres', 'postgres',{
+- this.sequelize = new this.postgres('newdb', 'postgres', 'postgres',{
 
 	host : 'localhost',
 
