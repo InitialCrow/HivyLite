@@ -13,7 +13,7 @@ How To Install
 
 - After you need to install you local database you can use the sh script in `app/database/install.sh`use
 
-> cd app/database; sh install.sh
+> cd app/database; sh install.sh\n
 > -> Install database //script launching ...
 > -> choose your host .... // write your host
 > <- localhost //my host for this db is now localhost
