@@ -16,7 +16,7 @@ class ProductList extends Component{
 	
 	
 	change(evt){
-		
+
 		let searchRequest = evt.target.value;
 		// let products = this.props.products
 		let requestList = []
@@ -28,6 +28,9 @@ class ProductList extends Component{
 
 			 	if(request.name.includes(searchRequest)&& searchRequest !== ''){
 		
+					requestList.push([React.createElement("li",{className: "request", key:request.id, onClick:()=>{this.props.takeRequest(request)}},request.name)])
+				}
+				if( searchRequest === '/*' ){
 					requestList.push([React.createElement("li",{className: "request", key:request.id, onClick:()=>{this.props.takeRequest(request)}},request.name)])
 				}
 				
@@ -48,6 +51,28 @@ class ProductList extends Component{
 
 								for(let j =0; j<product.form[i].props.children.length; j++ ){
 									if(product.form[i].props.children[j].type !== undefined){
+										product.form[i].props.children[j] =  [React.createElement(product.form[i].props.children[j].type, product.form[i].props.children[j].props)]
+									}
+								
+								}
+							}
+
+							product.form[i] = [React.createElement(product.form[i].type, product.form[i].props)]
+						}
+
+					}
+			
+					list.push(React.createElement("li",{className: "product", key:product.id, onClick:()=>{this.props.takeProduct(product)}},product.name,React.createElement("img",{className: "product-img", key:product.id+1, src:product.thumbnail})))
+						
+				}
+				if( searchRequest === '/*' ){
+					for(let i=0; i<product.form.length; i++){
+					// console.log(product.form[i].props)
+						if(product.form[i].props !== undefined  ){
+							if(product.form[i].props.children !== undefined){
+
+								for(let j =0; j<product.form[i].props.children.length; j++ ){
+									if(product.form[i].props.children[j].type !== undefined){
 						
 										product.form[i].props.children[j] =  [React.createElement(product.form[i].props.children[j].type, product.form[i].props.children[j].props)]
 									}
@@ -58,11 +83,8 @@ class ProductList extends Component{
 						}
 
 					}
-			
 					list.push(React.createElement("li",{className: "product", key:product.id, onClick:()=>{this.props.takeProduct(product)}},product.name,React.createElement("img",{className: "product-img", key:product.id+1, src:product.thumbnail})))
-						
 				}
-				
 				
 				
 				
