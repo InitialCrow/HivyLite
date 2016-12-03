@@ -15,35 +15,29 @@ class ProductForm extends Component{
 
 	render() {
 		
-			return(
+			if(this.props.product.name !== undefined){
+				return (
+
 					<div >
+						<h4>command: {this.props.product.name}</h4>
 						{this.props.product.form}
-
-						
 					</div>
-				
-			
+
 				)
-		}
-	
-	
+			}
+			else {
+				return(
+					<div></div>
+				)
+			}
 		
-		
-			
-		
-	
+	}
 
-
-		
-	
 }
 function mapStateToProps(state){
 	return {
 		product : state.activeProduct
 	}
 }
-// function matchDisptachProps(dispatch){
-// 	return bindActionCreators({takeProduct : takeProduct}, dispatch)
-// }
 
 export default connect(mapStateToProps)(ProductForm)

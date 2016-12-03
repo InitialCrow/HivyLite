@@ -13,9 +13,10 @@ class RequestForm extends Component{
 			let i = 0
 		
 			return(
-				<ul >
-
+				<ul className="request-list">
+					<h4>{this.props.request.name} ask :</h4>
 					{this.props.request.value[0].describe.map((desc)=>{
+
 						descList.push(desc)
 						
 					})}
@@ -44,8 +45,6 @@ function mapStateToProps(state){
 		request : state.activeRequest
 	}
 }
-// function matchDisptachProps(dispatch){
-// 	return bindActionCreators({takeProduct : takeProduct}, dispatch)
-// }
+
 
 export default connect(mapStateToProps)(RequestForm)

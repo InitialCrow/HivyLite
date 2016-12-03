@@ -12,8 +12,10 @@ const App = () => (
 
 			</label>
 			<RequestForm />
-			<ProductForm />
-			
+			<div className="product-form-container">
+				
+				<ProductForm />
+			</div>
 			<section className="form-button-container">
 				<a href="/" className="cancel-button">Cancel</a>
 				<button type="submit" className="clearfix form-button">Create a new request</button>

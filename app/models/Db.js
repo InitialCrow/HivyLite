@@ -3,7 +3,7 @@
 let Database = function(){
 	this.component = {react : require('react'), exec:require('child_process').exec},
 	this.postgres = require('sequelize');
-	this.sequelize = new this.postgres('test', 'postgres', 'postgres',{
+	this.sequelize = new this.postgres('hivylite', 'postgres', 'postgres',{
 				host : 'localhost',
 				dialect:'postgres',
 				logging: false
@@ -53,7 +53,7 @@ Database.prototype.migrate = function(){
 				self.component.react.createElement('input',{type:"text", key:'cm_1', name:"nbMadelaine", placeholder:'ex: 23' }),
 				self.component.react.createElement('p',{key:'cm_-2'},'Do you want choclate ?'),
 				self.component.react.createElement('input',{type:"checkbox", key:'cm_2', name:"checkBoxChoco", value:"true"}),
-				
+
 				self.component.react.createElement('input',{key:'cm_3', type:'hidden' ,name : "productType", value :"Madelaine"}),
 				self.component.react.createElement('br',{key:'cm_-3'}),
 				self.component.react.createElement('input',{key:'cp_16', type:'hidden' ,name : "productd_id", value :'1'}),
